@@ -1,0 +1,145 @@
+* {
+  font-family: "FiraCode Nerd Font", FontAwesome, sans-serif;
+  font-size: 20px;
+}
+
+window#waybar {
+  background-color: rgba(0, 0, 0, 0);
+  transition-property: background-color;
+  transition-duration: .5s;
+}
+
+window#waybar.hidden {
+  opacity: 0.2;
+}
+
+
+button {
+  border: none;
+  border-radius: 10px;
+}
+
+button:hover {
+  background: inherit;
+}
+
+#workspaces button {
+  padding: 0 10px;
+  background-color: #CBA6F7;
+  color: #181825;
+  margin-right: 10px;
+}
+
+#workspaces button:hover {
+  background: #EBA0AC;
+}
+
+#workspaces button.active {
+  background: #FAB387;
+}
+
+#workspaces button.focused {
+  background-color: green;
+}
+
+#workspaces button.urgent {
+  background-color: #eb4d4b;
+}
+
+#clock,
+#battery,
+#network,
+#pulseaudio,
+#bluetooth,
+#language,
+#custom-colorpicker,
+#custom-power {
+  margin-left: 10px;
+  padding: 0 10px;
+  color: #181825;
+  border-radius: 10px;
+}
+
+#custom-colorpicker {
+  margin-left: 0px;
+  padding-right: 15px;
+}
+
+#window {
+  padding: 0 10px;
+  background: #CBA6F7;
+  color: #181825;
+  border-radius: 10px;
+}
+
+
+.modules-left>widget:first-child>#workspaces {
+  margin-left: 0;
+}
+
+.modules-right>widget:last-child>#workspaces {
+  margin-right: 0;
+}
+
+#custom-colorpicker {
+  background-color: #89B4FA;
+}
+
+#clock {
+  background-color: #89B4FA;
+}
+
+#language {
+  background: #94E2D5;
+}
+
+#battery {
+  background-color: #B4BEFE;
+}
+
+#battery.charging,
+#battery.plugged {
+  background-color: #A6E3A1;
+}
+
+@keyframes blink {
+  to {
+    background-color: #ffffff;
+    color: #000000;
+  }
+}
+
+#battery.critical:not(.charging) {
+  background-color: #F38BA8;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+#network {
+  background-color: #CBA6F7;
+}
+
+#network.disconnected,
+#custom-power {
+  background-color: #F38BA8;
+}
+
+#custom-power {
+  padding-right: 15px;
+}
+
+
+#pulseaudio {
+  background-color: #F9E2AF;
+}
+
+#pulseaudio.muted {
+  background-color: #BAC2DE;
+}
+
+#bluetooth {
+  background-color: #74C7EC;
+}

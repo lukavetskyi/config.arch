@@ -1,0 +1,124 @@
+{
+  "position": "bottom",
+  "height": 30,
+  "width": 3820,
+  "spacing": 4,
+  "margin-bottom": 5,
+  "modules-left": [
+    "hyprland/workspaces",
+    "custom/colorpicker"
+  ],
+  "modules-center": [
+    "hyprland/window"
+  ],
+  "modules-right": [
+    "hyprland/language",
+    "pulseaudio",
+    "network",
+    "bluetooth",
+    "battery",
+    "clock",
+    "custom/power"
+  ],
+  "custom/power": {
+    "on-click": "/home/hlebusheck/.config/scripts/powermenu.sh",
+    "format": ""
+  },
+  "custom/colorpicker": {
+    "on-click": "hyprpicker -a -f hex",
+    "format": ""
+  },
+  "hyprland/workspaces": {
+    "format": "[{id}] {windows} ",
+    "format-window-separator": " ",
+    "window-rewrite-default": "󱕷",
+    "window-rewrite": {
+      "class<firefox>": "󰈹",
+      "class<firefox> title<.*github.*>": "",
+      "class<kitty>": "",
+      "class<nemo>": "",
+      "class<org.telegram.desktop>": "",
+      "class<WebApp-YTMusic4949>": "󰎆",
+      "class<com.obsproject.Studio>": "󰕧",
+      "class<steam>":"",
+      "class<vlc>":"󰕼",
+      "class<DB Browser for SQLite>": "",
+      "class<Postman>":"󱂛",
+      "class<kitty> title<nvim*>": ""
+    },
+    "on-scroll-up": "hyprctl dispatch workspace e+1",
+    "on-scroll-down": "hyprctl dispatch workspace e-1"
+  },
+  "hyprland/window": {
+    "format": "{title}"
+  },
+  "hyprland/language": {
+    "format": "  {}",
+    "format-en": "EN",
+    "format-ru": "RU"
+  },
+  "clock": {
+    "interval": 1,
+    "format": " {:%H:%OM:%OS}",
+    "format-alt": " {:%Od.%Om.%Oy}"
+  },
+  "battery": {
+    "states": {
+      // "good": 95,
+      "warning": 20,
+      "critical": 10
+    },
+    "format": "{icon} {capacity}%",
+    "format-charging": " {capacity}%",
+    "format-plugged": " {capacity}%",
+    "format-alt": "{icon} {time}",
+    // "format-good": "", // An empty format will hide the module
+    // "format-full": "",
+    "format-icons": [
+      " ",
+      " ",
+      " ",
+      " ",
+      " "
+    ]
+  },
+  "network": {
+    "format-wifi": "  {essid} - {signalStrength}%",
+    "format-ethernet": "{ipaddr}/{cidr} ",
+    "tooltip-format": "{ifname} via {gwaddr} ",
+    "format-linked": "{ifname} (No IP) ",
+    "format-disconnected": "⚠  Disconnected",
+    "format-alt": "{ifname}: {ipaddr}/{cidr}"
+  },
+  "pulseaudio": {
+    // "scroll-step": 1, // %, can be a float
+    "format": "{icon} {volume}%",
+    "format-bluetooth": "{volume}% {icon} ",
+    "format-bluetooth-muted": " {icon} ",
+    "format-muted": " ",
+    "format-source": "{volume}% ",
+    "format-source-muted": "",
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": [
+        "",
+        "",
+        ""
+      ]
+    },
+    "on-click": "pamixer -t",
+    "on-click-right": "pavucontrol"
+  },
+  "bluetooth": {
+    "format-on": "",
+    "format-connected": "󰂱 {device_alias}",
+    "format-off": "󰂲",
+    "on-click-right": "blueman-manager",
+    "on-click": "~/.config/scripts/bluetooth.sh"
+  }
+}

@@ -1,0 +1,35 @@
+* {
+  all: unset;
+  font-family: "FiraCode";
+  font-size: 24px;
+}
+
+#window {
+  background-color: #1E1E1E;
+  border-radius: 10px;
+}
+
+#outer-box {
+  background-color: #1E1E1E;
+  border: 2px solid #4FC1FE;
+  border-radius: 10px;
+}
+
+#input {
+  margin: 1rem;
+  padding: 0.5rem;
+  border-radius: 10px;
+  background-color: #23252E;
+}
+
+#entry {
+  margin: 0.25rem 0.75rem 0.25rem 0.75rem;
+  padding: 0.25rem 0.75rem 0.25rem 0.75rem;
+  color: #9699b7;
+  border-radius: 8px;
+}
+
+#entry:selected {
+  background-color: #303241;
+  color: #d9e0ee;
+}
