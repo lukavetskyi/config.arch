@@ -5,6 +5,7 @@
   "spacing": 4,
   "margin-bottom": 5,
   "modules-left": [
+    "custom/activeworkspace",
     "hyprland/workspaces",
     "custom/colorpicker"
   ],
@@ -28,8 +29,13 @@
     "on-click": "hyprpicker -a -f hex",
     "format": ""
   },
+  "custom/activeworkspace": {
+    "exec": "hyprctl activeworkspace -j | jq '.id'",
+    "return-type": "string",
+    "signal" : 10 
+  },
   "hyprland/workspaces": {
-    "format": "[{id}] {windows} ",
+    "format": "{windows}",
     "format-window-separator": " ",
     "window-rewrite-default": "󱕷",
     "window-rewrite": {
@@ -40,10 +46,10 @@
       "class<org.telegram.desktop>": "",
       "class<WebApp-YTMusic4949>": "󰎆",
       "class<com.obsproject.Studio>": "󰕧",
-      "class<steam>":"",
-      "class<vlc>":"󰕼",
+      "class<steam>": "",
+      "class<vlc>": "󰕼",
       "class<DB Browser for SQLite>": "",
-      "class<Postman>":"󱂛",
+      "class<Postman>": "󱂛",
       "class<kitty> title<nvim*>": ""
     },
     "on-scroll-up": "hyprctl dispatch workspace e+1",
