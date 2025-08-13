@@ -62,7 +62,7 @@ super + ctrl + space
 	bspc node -p cancel
 
 Menu
-  flameshot gui
+  ksnip -r
 
 super + Menu
   boomer
