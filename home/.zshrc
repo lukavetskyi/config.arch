@@ -2,6 +2,11 @@ HISTFILE=~/.cache/zsh_history
 HISTSIZE=1000
 SAVEHIST=1000
 
+setopt INC_APPEND_HISTORY
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_SAVE_NO_DUPS
+setopt HIST_IGNORE_SPACE
+setopt HIST_REDUCE_BLANKS
 
 alias e='nvim'
 
