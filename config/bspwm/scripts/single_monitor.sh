@@ -13,7 +13,7 @@ bspc config single_monocle true
 
 bspc rule -a TelegramDesktop state=floating follow=true desktop="^10"
 
-feh --bg-fill ~/.config/bspwm/wallpaper_fullhd_horizontal.jpg
+feh --bg-fill ~/.config/bspwm/wallpaper_fullhd.jpg
 
 xte "mousemove 960 540"
 

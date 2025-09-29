@@ -46,7 +46,7 @@ confirm_cmd() {
 
 # Pass variables to rofi dmenu
 run_rofi() {
-	echo -e "$shutdown\n$reboot\n$logout" | rofi_cmd
+	echo -e "$shutdown\n$reboot\n$logout\n$lock" | rofi_cmd
 }
 
 # Execute Command
@@ -55,6 +55,8 @@ run_cmd() {
     systemctl poweroff
   elif [[ $1 == '--reboot' ]]; then
     systemctl reboot
+  elif [[ $1 == '--lock' ]]; then
+    xsecurelock
   elif [[ $1 == '--logout' ]]; then
     if [[ "$DESKTOP_SESSION" == 'openbox' ]]; then
       openbox --exit
@@ -78,11 +80,7 @@ case ${chosen} in
 		run_cmd --reboot
         ;;
     $lock)
-		if [[ -x '/usr/bin/betterlockscreen' ]]; then
-			betterlockscreen -l
-		elif [[ -x '/usr/bin/i3lock' ]]; then
-			i3lock
-		fi
+		run_cmd --lock
         ;;
     $suspend)
 		run_cmd --suspend
